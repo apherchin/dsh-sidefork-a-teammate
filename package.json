@@ -1,0 +1,64 @@
+{
+  "name": "dsh-sidefork-a-teammate",
+  "version": "0.2.0",
+  "description": "DSH plugin: spawn a teammate from the UI. `/teammate` offers two modes — `new teammate` (a fresh conversation that inherits nothing) and `fork teammate` (a parallel branch that inherits this conversation's completed turns).",
+  "type": "module",
+  "main": "index.mjs",
+  "icon": "./icon.svg",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": "./index.mjs",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.mjs",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "assets/*",
+    "locale/*.json"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "scripts": {
+    "test": "node test/host-smoke.test.mjs && node test/client-compliance.test.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "cordis",
+    "dsh-plugin",
+    "plugin",
+    "teammate",
+    "agent-team",
+    "spawn",
+    "fork"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "apherchin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apherchin/dsh-sidefork-a-teammate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/apherchin/dsh-sidefork-a-teammate/issues"
+  },
+  "homepage": "https://github.com/apherchin/dsh-sidefork-a-teammate#readme",
+  "engines": {
+    "node": ">=20"
+  }
+}

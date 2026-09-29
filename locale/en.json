@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Spawn a teammate",
+    "description": "Type /teammate to spawn a teammate by hand: new teammate (fresh conversation, inherits nothing) or fork teammate (parallel branch inheriting this conversation's completed turns)."
+  }
+}

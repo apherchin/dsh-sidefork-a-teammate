@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "唤醒组员",
+    "description": "在输入框敲 /teammate 手动拉起一个组员：new teammate（全新对话，不继承历史）或 fork teammate（并行分支，继承本会话已完成的回合）。"
+  }
+}

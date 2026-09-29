@@ -1,0 +1,17 @@
+# Layer owned by the `dsh-sidefork-a-teammate` bundle.
+#
+# `name` 必须是**包名**（DSH 从 profile 的 node_modules 里解析它）。
+# ⚠️ 不要写绝对路径：官方实测（Win11 VM + dsh 0.2.0-rc.2）写死本机路径时，该行会被
+#    静默 disable —— `dsh: disabling profile plugin row "team-commands": its declared peer
+#    dependencies cannot be validated: UNKNOWN: unknown error, lstat 'D:\'`
+#    （提醒功能整体消失，stderr 只有一行）。改成包名后正常装载。
+#
+# 装法（会把本 bundle 记进 `dsh.profile.bundles`，无需手工编辑 profile 文件）：
+#   dsh plugin --profile <profile> add dsh-sidefork-a-teammate
+#
+# ⚠️ 本插件依赖宿主服务 `connection` / `agents` / `agentTeams`（Agent Teams 能力由
+#    `@deepseek-ai/dsh-experimental-agent-team-profile` 提供）。缺 `agentTeams` 时
+#    host 半边**不自注册路由**（只记一条 warn），不会影响启动。
+- insert:
+    - id: team-commands
+      name: dsh-sidefork-a-teammate
